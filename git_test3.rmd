@@ -1,0 +1,12 @@
+---
+title: "git test3"
+author: "jy"
+date: "2018Äê5ÔÂ29ÈÕ"
+output: html_document
+---
+```{r}
+summary(cars)
+plot(cars$dist,cars$speed,col="red")
+
+```
+
