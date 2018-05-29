@@ -12,3 +12,7 @@ plot(cars$dist,cars$speed,col="red")
 
 ```
 
+```{r}
+summary(iris)
+plot(iris$Sepal.Length,iris$Sepal.Width,col="blue")
+```
