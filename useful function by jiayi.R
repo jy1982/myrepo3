@@ -9,7 +9,7 @@
 sperate.sp.fun=function(data)  {
   temp=subset(data,data$species==spp[i])  ##
   fin.dat=data.frame(
-    spid=i,species=unique(temp$species),latin=unique(temp$À­¶¡Ãû), sp.code=unique(temp$sp.code),
+    spid=i,species=unique(temp$species),latin=unique(temp$æ‹‰ä¸å), sp.code=unique(temp$sp.code),
     light=mean(temp$light),RGR=mean(temp$RGR))
   
   if (i==1){                 # use to write down data row by row
@@ -23,7 +23,7 @@ for(i in 1:length(spp)) {sperate.sp.fun(light.spp)}   ### do above program for e
 
 
 ##============================================================================
-# 2. use to calculate area of ¶à±ßĞÎ£¨Í¹°ü£©
+# 2. use to calculate area of å¤šè¾¹å½¢ï¼ˆå‡¸åŒ…ï¼‰
 ##===============================================================================
 library(sp)
 x1 <- rnorm(100, 0.8, 0.3)
@@ -39,7 +39,7 @@ lines(chull.coords )
 
 
 ## =======================================================================
-# 3. »­Í¼£º2D£¬3D
+# 3. ç”»å›¾ï¼š2Dï¼Œ3D
 ## =======================================================================
 x <- y <- 1:3
 z <- matrix (nrow = 3, ncol = 3, data = 1:9)
@@ -48,14 +48,14 @@ image2D(z, x, y, rasterImage = TRUE, border = "black")
 
 
 ## =======================================================================
-# 4. Áí´æÍ¼Æ¬£¬png£¬pdf
+# 4. å¦å­˜å›¾ç‰‡ï¼Œpngï¼Œpdf
 ## =======================================================================
-png(file="D:/Histogram of tree transmittance.png",family="GB1",  ##ÖĞÎÄ
+png(file="D:/Histogram of tree transmittance.png",family="GB1",  ##ä¸­æ–‡
     height=7,width=10,res=300, units = "in")
 
 
 ##---
-lightdat=read.csv(choose.files(),header = T)  ##5ha-20151112 - ĞŞ¸ÄÎïÖÖÃû×Ö-È¥ÖØ.csv
+lightdat=read.csv(choose.files(),header = T)  ##5ha-20151112 - ä¿®æ”¹ç‰©ç§åå­—-å»é‡.csv
 spp=levels(lightdat$species)
 
 pdf(file="D:/Histogram of sp tree transmittance.pdf",family="GB1")
@@ -85,23 +85,23 @@ for (i in 1:length(spp)){
 
 
 #===================================================================================
-# ÅÅĞò----
+# æ’åº----
 #===================================================================================
 library("dplyr")
 arrange(mtcars, cyl, disp)
 
 
 #=============================================================================
-# Ïò»æÍ¼ÇøÓòÄÚ²¿Ìí¼ÓÎÄ±¾
+# å‘ç»˜å›¾åŒºåŸŸå†…éƒ¨æ·»åŠ æ–‡æœ¬
 #============================================================================
-text( location , ¡°text to place¡± , pos ,¡­ ) 
-#×ø±êÖá£¬ÒªÌí¼ÓµÄÎÄ±¾£¬ÎÄ±¾Ïà¶ÔÓÚÎ»ÖÃ²ÎÊıµÄ·½Î»£¬1234£¬ÏÂ×óÉÏÓÒ
+text( location , â€œtext to placeâ€ , pos ,â€¦ ) 
+#åæ ‡è½´ï¼Œè¦æ·»åŠ çš„æ–‡æœ¬ï¼Œæ–‡æœ¬ç›¸å¯¹äºä½ç½®å‚æ•°çš„æ–¹ä½ï¼Œ1234ï¼Œä¸‹å·¦ä¸Šå³
 
 #============================================================================
-# ÏòÍ¼ĞÎµÄËÄ¸ö±ß½çÖ®Ò»Ìí¼ÓÎÄ±¾
+# å‘å›¾å½¢çš„å››ä¸ªè¾¹ç•Œä¹‹ä¸€æ·»åŠ æ–‡æœ¬
 #============================================================================
-mtext(¡°text to place¡± , side , line = n , outer = TRUE or FALSE  ¡­¡­) 
-#sideÈ¡1234 £¬ÒâÎ¶×Å·ÅÖÃÎÄ±¾µÄ±ßÏÂ×óÉÏÓÒ£¬line ÄÚÒÆ»òÍâÒÆÎÄ±¾¿ÉÈ¡¸ºÊı¡£
+mtext(â€œtext to placeâ€ , side , line = n , outer = TRUE or FALSE  â€¦â€¦) 
+#sideå–1234 ï¼Œæ„å‘³ç€æ”¾ç½®æ–‡æœ¬çš„è¾¹ä¸‹å·¦ä¸Šå³ï¼Œline å†…ç§»æˆ–å¤–ç§»æ–‡æœ¬å¯å–è´Ÿæ•°ã€‚
 #note that a vector adj has a different meaning from text. adj = 0.5 will
 #centre the string, but for outer = TRUE on the device region rather than the plot region.
 
@@ -121,7 +121,7 @@ text( 0.253,7.5,cex=1,"P  < 0.001")
 dev.off()
 
 
-###### ggplotÖĞ¸ü¼ò±ã ¼¯³É
+###### ggplotä¸­æ›´ç®€ä¾¿ é›†æˆ
 library("ggplot2")
 s.gg=read.csv(file.choose(),header = T)  ##"dbh-gg.csv"
 g1=ggplot(data=s.gg,aes(x=s.gg$rank.x,y=s.gg$rank.y))+
@@ -156,7 +156,7 @@ g2
 dev.off()
 
 
-###ggplot ²¼¾Ö£¬Ò»Ò³¶àÍ¼
+###ggplot å¸ƒå±€ï¼Œä¸€é¡µå¤šå›¾
 library(grid)
 vplayout <- function(x, y) viewport(layout.pos.row = x, layout.pos.col = y)
 png(file="D:/abund and ba vs ST01.png",height=7,width=12,res=300, units = "in")
@@ -168,7 +168,7 @@ dev.off()
 
 
 #============================================================================
-#ÉÏÏÂ±ê
+#ä¸Šä¸‹æ ‡
 #============================================================================
 plot(1,ylab=expression(italic("toto")["subscript"]),
      xlab=expression(italic("toto")^"superscript"))
@@ -176,7 +176,7 @@ plot(1,ylab=expression(italic("toto")["subscript"]),
 
 
 #============================================================================
-#¿Õ¼ä¸ñ¾Ö-g-function£¬
+#ç©ºé—´æ ¼å±€-g-functionï¼Œ
 #============================================================================
 
 #------------------------------------------------
@@ -231,46 +231,46 @@ for(i in 1:length(spp)){
 }
 
 
-##---------------²Î¿¼×ÊÁÏ
-par£¨col.axis=¡°black¡±£¬cex.axis=0.8£¬cex.lab=1£¬ font=3£©
-par£¨mfrow=c£¨1£¬2))
-trees=ppp£¨bb0$gx£¬ bb0$gy£¬c£¨0£¬ 400£©£¬c£¨0£¬ 500£©£¬
-marks=factor£¨bb0$sp£©£©
-semere=trees£Ûtrees$marks==¡°SEMERE¡±]
-mapdata=read.csv£¨¡°h:/mapdata.csv¡±£¬ header=F£©
-map=as.matrix£¨mapdata£©
-altitude=matrix£¨map£¬ nrow=41£¬ ncol=51£¬ dimnames=NULL£©
-x=10¡Á£¨1£º nrow£¨altitude£©£©- 10
-y=10¡Á£¨1£º ncol£¨altitude£©£©- 10
-contour£¨x£¬y£¬altitude£¬axes=T£¬nlevels=20£¬main=¡°a¡±£¬ xlab=¡°xÖáx-coordinates£¨m£©¡±£¬ ylab=¡°yÖáy-coordinates£¨m£©¡±£©
-points£¨semere$x£¬ semere$y£¬col=¡°red¡±£¬ pch=1£¬cex= 0.8£¬ xlim=c£¨0£¬ 400£©£¬ ylim=c£¨0£¬ 500£©£©
-GA=Gest£¨semere£¬correction=c£¨¡°border¡±£¬¡°isotropic¡±£¬¡°Ripley¡±£¬¡°translate¡±£©£©
-EA=envelope£¨semere£¬Gest£©
-plot£¨EA£¬xlab=¡°³ß¶ÈScale£¨m£©¡±£¬ ylab=¡°GÖµG£¨r£©¡±£¬main=¡°b¡±£©
+##---------------å‚è€ƒèµ„æ–™
+parï¼ˆcol.axis=â€œblackâ€ï¼Œcex.axis=0.8ï¼Œcex.lab=1ï¼Œ font=3ï¼‰
+parï¼ˆmfrow=cï¼ˆ1ï¼Œ2))
+trees=pppï¼ˆbb0$gxï¼Œ bb0$gyï¼Œcï¼ˆ0ï¼Œ 400ï¼‰ï¼Œcï¼ˆ0ï¼Œ 500ï¼‰ï¼Œ
+marks=factorï¼ˆbb0$spï¼‰ï¼‰
+semere=treesï¼»trees$marks==â€œSEMEREâ€]
+mapdata=read.csvï¼ˆâ€œh:/mapdata.csvâ€ï¼Œ header=Fï¼‰
+map=as.matrixï¼ˆmapdataï¼‰
+altitude=matrixï¼ˆmapï¼Œ nrow=41ï¼Œ ncol=51ï¼Œ dimnames=NULLï¼‰
+x=10Ã—ï¼ˆ1ï¼š nrowï¼ˆaltitudeï¼‰ï¼‰- 10
+y=10Ã—ï¼ˆ1ï¼š ncolï¼ˆaltitudeï¼‰ï¼‰- 10
+contourï¼ˆxï¼Œyï¼Œaltitudeï¼Œaxes=Tï¼Œnlevels=20ï¼Œmain=â€œaâ€ï¼Œ xlab=â€œxè½´x-coordinatesï¼ˆmï¼‰â€ï¼Œ ylab=â€œyè½´y-coordinatesï¼ˆmï¼‰â€ï¼‰
+pointsï¼ˆsemere$xï¼Œ semere$yï¼Œcol=â€œredâ€ï¼Œ pch=1ï¼Œcex= 0.8ï¼Œ xlim=cï¼ˆ0ï¼Œ 400ï¼‰ï¼Œ ylim=cï¼ˆ0ï¼Œ 500ï¼‰ï¼‰
+GA=Gestï¼ˆsemereï¼Œcorrection=cï¼ˆâ€œborderâ€ï¼Œâ€œisotropicâ€ï¼Œâ€œRipleyâ€ï¼Œâ€œtranslateâ€ï¼‰ï¼‰
+EA=envelopeï¼ˆsemereï¼ŒGestï¼‰
+plotï¼ˆEAï¼Œxlab=â€œå°ºåº¦Scaleï¼ˆmï¼‰â€ï¼Œ ylab=â€œGå€¼Gï¼ˆrï¼‰â€ï¼Œmain=â€œbâ€ï¼‰
 
 
-par£¨col.axis=¡°black¡±£¬cex.axis=0.8£¬cex.lab=1£¬ font=3£©
-par£¨mfrow=c£¨1£¬2£©£©
-trees=ppp£¨bb0$gx£¬ bb0$gy£¬c£¨0£¬ 400£©£¬c£¨0£¬ 500£©£¬
-marks=factor£¨bb0$sp£©£©
-semere=trees£Ûtrees$marks==¡°SEMERE¡±£İ
-barrpe=trees£Ûtrees$marks==¡°BARRPE¡±£İ
-mapdata=read.csv£¨¡°h:/mapdata.csv¡±£¬ header=F£©
-map=as.matrix£¨mapdata£©
-altitude=matrix£¨map£¬nrow=41£¬ ncol=51£¬ dimnames=NULL£©
-x=10¡Á£¨1:nrow£¨altitude£©£©- 10
-y=10¡Á£¨1:ncol£¨altitude£©£©- 10
-contour£¨x£¬y£¬altitude£¬axes=T£¬nlevels=20£¬main=¡°a¡±£¬ xlab=¡°xÖáx-coordinates£¨m£©¡±£¬ ylab=¡°yÖáy-coordinates£¨m£©¡±£©
-points£¨semere$x£¬ semere$y£¬col=¡°red¡±£¬ pch=1£¬cex=0.8£¬ xlim=c£¨0£¬ 400£©£¬ ylim=c£¨0£¬ 500£©£©
-points£¨barrpe $x£¬barrpe $y£¬col=¡°green¡±£¬pch=1£¬cex=0.8£¬ xlim=c£¨0£¬ 400£©£¬ ylim=c£¨0£¬ 500£©£©
-Gm=Gcross£¨trees£¬ ¡°SEMERE¡±£¬ ¡°BARRPE¡±£©
-EA=envelope£¨trees £¬Gcross£¬ i=¡°SEMERE¡±£¬ j= ¡°BARRPE¡±£©
-plot£¨EA£¬xlab=¡°³ß¶ÈScale£¨m£©¡±£¬ ylab=¡°G12ÖµG12£¨r£©¡±£¬main=¡°b¡±£¬xlim=c£¨0£¬ 30£©£©
+parï¼ˆcol.axis=â€œblackâ€ï¼Œcex.axis=0.8ï¼Œcex.lab=1ï¼Œ font=3ï¼‰
+parï¼ˆmfrow=cï¼ˆ1ï¼Œ2ï¼‰ï¼‰
+trees=pppï¼ˆbb0$gxï¼Œ bb0$gyï¼Œcï¼ˆ0ï¼Œ 400ï¼‰ï¼Œcï¼ˆ0ï¼Œ 500ï¼‰ï¼Œ
+marks=factorï¼ˆbb0$spï¼‰ï¼‰
+semere=treesï¼»trees$marks==â€œSEMEREâ€ï¼½
+barrpe=treesï¼»trees$marks==â€œBARRPEâ€ï¼½
+mapdata=read.csvï¼ˆâ€œh:/mapdata.csvâ€ï¼Œ header=Fï¼‰
+map=as.matrixï¼ˆmapdataï¼‰
+altitude=matrixï¼ˆmapï¼Œnrow=41ï¼Œ ncol=51ï¼Œ dimnames=NULLï¼‰
+x=10Ã—ï¼ˆ1:nrowï¼ˆaltitudeï¼‰ï¼‰- 10
+y=10Ã—ï¼ˆ1:ncolï¼ˆaltitudeï¼‰ï¼‰- 10
+contourï¼ˆxï¼Œyï¼Œaltitudeï¼Œaxes=Tï¼Œnlevels=20ï¼Œmain=â€œaâ€ï¼Œ xlab=â€œxè½´x-coordinatesï¼ˆmï¼‰â€ï¼Œ ylab=â€œyè½´y-coordinatesï¼ˆmï¼‰â€ï¼‰
+pointsï¼ˆsemere$xï¼Œ semere$yï¼Œcol=â€œredâ€ï¼Œ pch=1ï¼Œcex=0.8ï¼Œ xlim=cï¼ˆ0ï¼Œ 400ï¼‰ï¼Œ ylim=cï¼ˆ0ï¼Œ 500ï¼‰ï¼‰
+pointsï¼ˆbarrpe $xï¼Œbarrpe $yï¼Œcol=â€œgreenâ€ï¼Œpch=1ï¼Œcex=0.8ï¼Œ xlim=cï¼ˆ0ï¼Œ 400ï¼‰ï¼Œ ylim=cï¼ˆ0ï¼Œ 500ï¼‰ï¼‰
+Gm=Gcrossï¼ˆtreesï¼Œ â€œSEMEREâ€ï¼Œ â€œBARRPEâ€ï¼‰
+EA=envelopeï¼ˆtrees ï¼ŒGcrossï¼Œ i=â€œSEMEREâ€ï¼Œ j= â€œBARRPEâ€ï¼‰
+plotï¼ˆEAï¼Œxlab=â€œå°ºåº¦Scaleï¼ˆmï¼‰â€ï¼Œ ylab=â€œG12å€¼G12ï¼ˆrï¼‰â€ï¼Œmain=â€œbâ€ï¼Œxlim=cï¼ˆ0ï¼Œ 30ï¼‰ï¼‰
 
 
 
 ##======================================
-# ÇåÀíÄÚ´æ£¿ ¾¡Á¿Ê¹ÓÃmatrix¶ø²»ÊÇdata.frame
+# æ¸…ç†å†…å­˜ï¼Ÿ å°½é‡ä½¿ç”¨matrixè€Œä¸æ˜¯data.frame
 ##===============================================
 rm(object)
 gc()
@@ -280,7 +280,7 @@ gc()
 #
 ##===============================================================
 
-png("D:/ST vs log(traits)ºÏ³É.png",height=10,width=10,res=300, units = "in");
+png("D:/ST vs log(traits)åˆæˆ.png",height=10,width=10,res=300, units = "in");
 par(mfrow=c(2,2))
 
 ##===================== 1. abundance (50ha) ==================================
@@ -321,25 +321,25 @@ theme_zg <- function(..., bg='white'){
 }
 
 
-####################¶àÍ¼×éºÏ
-#ÏÂÔØºÍ°²×°°ü
+####################å¤šå›¾ç»„åˆ
+#ä¸‹è½½å’Œå®‰è£…åŒ…
 #install.packages(c("ggolot2","Rmisc","lattice","plyr"))
 library(ggplot2)
 library(Rmisc)
 library(lattice)
 library(plyr)
 
-#»æÍ¼
+#ç»˜å›¾
 p1 <- ggplot(mtcars,aes(mpg,hp,color=factor(vs)))+geom_point()
 p2 <- ggplot(mtcars,aes(mpg,wt,color=factor(vs)))+geom_point()
 p3 <- ggplot(mtcars,aes(mpg,drat,color=factor(vs)))+geom_point()
 p4 <- ggplot(mtcars,aes(mpg,cyl,color=factor(vs)))+geom_point()
 
-#½«¶àÍ¼×éºÏÆğÀ´
+#å°†å¤šå›¾ç»„åˆèµ·æ¥
 multiplot(p1,p2,p3,p4,cols = 1)
 
 
-####Í¼ĞÎ±ß¿ò
+####å›¾å½¢è¾¹æ¡†
 plot(1:5)
 box(which = "outer", col = "red", lwd = 10)
 
@@ -392,3 +392,5 @@ title("Regression of MPG on Weight")
 box(which = "plot",  col = "red",    lwd = 2)
 box(which = "figure",col = "blue",   lwd = 4)
 box(which = "outer", col = "black",  lty = 8)
+
+a lines from github
