@@ -9,7 +9,7 @@
 sperate.sp.fun=function(data)  {
   temp=subset(data,data$species==spp[i])  ##
   fin.dat=data.frame(
-    spid=i,species=unique(temp$species),latin=unique(temp$拉丁名), sp.code=unique(temp$sp.code),
+    spid=i,species=unique(temp$species),latin=unique(temp$拉丁�?), sp.code=unique(temp$sp.code),
     light=mean(temp$light),RGR=mean(temp$RGR))
   
   if (i==1){                 # use to write down data row by row
@@ -23,7 +23,7 @@ for(i in 1:length(spp)) {sperate.sp.fun(light.spp)}   ### do above program for e
 
 
 ##============================================================================
-# 2. use to calculate area of 多边形（凸包）
+# 2. use to calculate area of 多边形（凸包�?
 ##===============================================================================
 library(sp)
 x1 <- rnorm(100, 0.8, 0.3)
@@ -39,7 +39,7 @@ lines(chull.coords )
 
 
 ## =======================================================================
-# 3. 画图：2D，3D
+# 3. 画图�?2D�?3D
 ## =======================================================================
 x <- y <- 1:3
 z <- matrix (nrow = 3, ncol = 3, data = 1:9)
@@ -92,16 +92,16 @@ arrange(mtcars, cyl, disp)
 
 
 #=============================================================================
-# 向绘图区域内部添加文本
+# 向绘图区域内部添加文�?
 #============================================================================
-text( location , “text to place” , pos ,… ) 
-#坐标轴，要添加的文本，文本相对于位置参数的方位，1234，下左上右
+text( location , “text to place�? , pos ,�? ) 
+#坐标轴，要添加的文本，文本相对于位置参数的方位，1234，下左上�?
 
 #============================================================================
 # 向图形的四个边界之一添加文本
 #============================================================================
-mtext(“text to place” , side , line = n , outer = TRUE or FALSE  ……) 
-#side取1234 ，意味着放置文本的边下左上右，line 内移或外移文本可取负数。
+mtext(“text to place�? , side , line = n , outer = TRUE or FALSE  …�?) 
+#side�?1234 ，意味着放置文本的边下左上右，line 内移或外移文本可取负数�?
 #note that a vector adj has a different meaning from text. adj = 0.5 will
 #centre the string, but for outer = TRUE on the device region rather than the plot region.
 
@@ -121,7 +121,7 @@ text( 0.253,7.5,cex=1,"P  < 0.001")
 dev.off()
 
 
-###### ggplot中更简便 集成
+###### ggplot中更简�? 集成
 library("ggplot2")
 s.gg=read.csv(file.choose(),header = T)  ##"dbh-gg.csv"
 g1=ggplot(data=s.gg,aes(x=s.gg$rank.x,y=s.gg$rank.y))+
@@ -156,7 +156,7 @@ g2
 dev.off()
 
 
-###ggplot 布局，一页多图
+###ggplot 布局，一页多�?
 library(grid)
 vplayout <- function(x, y) viewport(layout.pos.row = x, layout.pos.col = y)
 png(file="D:/abund and ba vs ST01.png",height=7,width=12,res=300, units = "in")
@@ -168,7 +168,7 @@ dev.off()
 
 
 #============================================================================
-#上下标
+#上下�?
 #============================================================================
 plot(1,ylab=expression(italic("toto")["subscript"]),
      xlab=expression(italic("toto")^"superscript"))
@@ -176,7 +176,7 @@ plot(1,ylab=expression(italic("toto")["subscript"]),
 
 
 #============================================================================
-#空间格局-g-function，
+#空间格局-g-function�?
 #============================================================================
 
 #------------------------------------------------
@@ -231,46 +231,46 @@ for(i in 1:length(spp)){
 }
 
 
-##---------------参考资料
-par（col.axis=“black”，cex.axis=0.8，cex.lab=1， font=3）
-par（mfrow=c（1，2))
-trees=ppp（bb0$gx， bb0$gy，c（0， 400），c（0， 500），
+##---------------参考资�?
+par（col.axis=“black”，cex.axis=0.8，cex.lab=1�? font=3�?
+par（mfrow=c�?1�?2))
+trees=ppp（bb0$gx�? bb0$gy，c�?0�? 400），c�?0�? 500），
 marks=factor（bb0$sp））
 semere=trees［trees$marks==“SEMERE”]
-mapdata=read.csv（“h:/mapdata.csv”， header=F）
-map=as.matrix（mapdata）
-altitude=matrix（map， nrow=41， ncol=51， dimnames=NULL）
-x=10×（1： nrow（altitude））- 10
-y=10×（1： ncol（altitude））- 10
+mapdata=read.csv（“h:/mapdata.csv”， header=F�?
+map=as.matrix（mapdata�?
+altitude=matrix（map�? nrow=41�? ncol=51�? dimnames=NULL�?
+x=10×�?1�? nrow（altitude））- 10
+y=10×�?1�? ncol（altitude））- 10
 contour（x，y，altitude，axes=T，nlevels=20，main=“a”， xlab=“x轴x-coordinates（m）”， ylab=“y轴y-coordinates（m）”）
-points（semere$x， semere$y，col=“red”， pch=1，cex= 0.8， xlim=c（0， 400）， ylim=c（0， 500））
-GA=Gest（semere，correction=c（“border”，“isotropic”，“Ripley”，“translate”））
-EA=envelope（semere，Gest）
+points（semere$x�? semere$y，col=“red”， pch=1，cex= 0.8�? xlim=c�?0�? 400）， ylim=c�?0�? 500））
+GA=Gest（semere，correction=c（“border”，“isotropic”，“Ripley”，“translate”）�?
+EA=envelope（semere，Gest�?
 plot（EA，xlab=“尺度Scale（m）”， ylab=“G值G（r）”，main=“b”）
 
 
-par（col.axis=“black”，cex.axis=0.8，cex.lab=1， font=3）
-par（mfrow=c（1，2））
-trees=ppp（bb0$gx， bb0$gy，c（0， 400），c（0， 500），
+par（col.axis=“black”，cex.axis=0.8，cex.lab=1�? font=3�?
+par（mfrow=c�?1�?2））
+trees=ppp（bb0$gx�? bb0$gy，c�?0�? 400），c�?0�? 500），
 marks=factor（bb0$sp））
 semere=trees［trees$marks==“SEMERE”］
 barrpe=trees［trees$marks==“BARRPE”］
-mapdata=read.csv（“h:/mapdata.csv”， header=F）
-map=as.matrix（mapdata）
-altitude=matrix（map，nrow=41， ncol=51， dimnames=NULL）
-x=10×（1:nrow（altitude））- 10
-y=10×（1:ncol（altitude））- 10
+mapdata=read.csv（“h:/mapdata.csv”， header=F�?
+map=as.matrix（mapdata�?
+altitude=matrix（map，nrow=41�? ncol=51�? dimnames=NULL�?
+x=10×�?1:nrow（altitude））- 10
+y=10×�?1:ncol（altitude））- 10
 contour（x，y，altitude，axes=T，nlevels=20，main=“a”， xlab=“x轴x-coordinates（m）”， ylab=“y轴y-coordinates（m）”）
-points（semere$x， semere$y，col=“red”， pch=1，cex=0.8， xlim=c（0， 400）， ylim=c（0， 500））
-points（barrpe $x，barrpe $y，col=“green”，pch=1，cex=0.8， xlim=c（0， 400）， ylim=c（0， 500））
-Gm=Gcross（trees， “SEMERE”， “BARRPE”）
-EA=envelope（trees ，Gcross， i=“SEMERE”， j= “BARRPE”）
-plot（EA，xlab=“尺度Scale（m）”， ylab=“G12值G12（r）”，main=“b”，xlim=c（0， 30））
+points（semere$x�? semere$y，col=“red”， pch=1，cex=0.8�? xlim=c�?0�? 400）， ylim=c�?0�? 500））
+points（barrpe $x，barrpe $y，col=“green”，pch=1，cex=0.8�? xlim=c�?0�? 400）， ylim=c�?0�? 500））
+Gm=Gcross（trees�? “SEMERE”， “BARRPE”）
+EA=envelope（trees ，Gcross�? i=“SEMERE”， j= “BARRPE”）
+plot（EA，xlab=“尺度Scale（m）”， ylab=“G12值G12（r）”，main=“b”，xlim=c�?0�? 30））
 
 
 
 ##======================================
-# 清理内存？ 尽量使用matrix而不是data.frame
+# 清理内存�? 尽量使用matrix而不是data.frame
 ##===============================================
 rm(object)
 gc()
@@ -335,7 +335,7 @@ p2 <- ggplot(mtcars,aes(mpg,wt,color=factor(vs)))+geom_point()
 p3 <- ggplot(mtcars,aes(mpg,drat,color=factor(vs)))+geom_point()
 p4 <- ggplot(mtcars,aes(mpg,cyl,color=factor(vs)))+geom_point()
 
-#将多图组合起来
+#将多图组合起�?
 multiplot(p1,p2,p3,p4,cols = 1)
 
 
@@ -393,4 +393,4 @@ box(which = "plot",  col = "red",    lwd = 2)
 box(which = "figure",col = "blue",   lwd = 4)
 box(which = "outer", col = "black",  lty = 8)
 
-a lines from github
+#a lines from github
